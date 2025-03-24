@@ -1,6 +1,3 @@
-
-
-```markdown
 # Project README
 
 ## Setup
@@ -73,7 +70,7 @@
 - On successful project generation or modification, a success message is returned:
 ```json
 {
-  "response": "✅ New project 'project_name' created!"  // or modified successfully
+  "response": "✅ New project 'project_name' created!  or modified successfully"
 }
 ```
 
@@ -153,7 +150,7 @@ The generated and modified files are stored in the `generated_projects` director
 
 3. **Fetch current file content**: The system fetches the current content of the file(s) to be modified (e.g., `index.html`, `style.css`).
 
-4. **Modification is applied**: The modification request is appended to the file content, and the updated content is sent to OpenAI for processing.
+4. **Modification is applied**: The modification request is appended to the file content, user prompt is also appended to the file content, and the updated content is sent to OpenAI for processing.
 
 5. **File is updated**: The modified file is updated with the new content and stored in the appropriate project folder.
 
