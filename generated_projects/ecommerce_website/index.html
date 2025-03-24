@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce Website</title>
+</head>
+<body>
+    <header>
+        <h1>Product Page</h1>
+    </header>
+    <main>
+        <section id="product-description">
+            <h2>Product Title</h2>
+            <p>Description goes here.</p>
+            <p>Price: $XX.XX</p>
+            <p>Availability: In Stock</p>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">Large</option>
+            </select>
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <button id="add-to-cart">Add to Cart</button>
+        </section>
+        <section id="customer-reviews">
+            <h3>Customer Reviews</h3>
+            <ul>
+                <li><strong>User 1:</strong> Great product! <span>★★★★★</span></li>
+                <li><strong>User 2:</strong> Good value for money. <span>★★★★☆</span></li>
+                <!-- More reviews here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Shopping Cart</a></li>
+                <li><a href="#">Product Categories</a></li>
+                <li><a href="#">Customer Service</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

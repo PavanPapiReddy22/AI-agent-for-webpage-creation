@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Frontend Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box">
+            <!-- User messages and AI responses will appear here -->
+        </div>
+        <textarea id="user-input" placeholder="Type your message here..." rows="4"></textarea>
+        <button id="send-btn">Send</button>
+    </div>
+    <script>
+        document.getElementById("send-btn").addEventListener("click", function() {
+            const userMessage = document.getElementById("user-input").value;
+            if (userMessage) {
+                document.getElementById("chat-box").innerHTML += `<div><strong>User:</strong> ${userMessage}</div>`;
+                document.getElementById("user-input").value = "";
+
+                fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ message: userMessage })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const aiResponse = data.response;
+                    document.getElementById("chat-box").innerHTML += `<div><strong>AI:</strong> ${aiResponse}</div>`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
